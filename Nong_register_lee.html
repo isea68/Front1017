@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register1</title>
+    <title>Register</title>
     <style>
         body {
             width: 1024px;
@@ -14,6 +14,11 @@
             width: 100%;
             table-layout: fixed;
             border-collapse: collapse;
+        }
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
         }
         col:first-child {
             width: 30%;
@@ -27,10 +32,13 @@
         td {
             border: 1px solid #ddd;
             padding: 8px;
-            vertical-align: top;
+            /* vertical-align: middle; */
+        }
+        tr:not(:has(td[colspan="2"])) td:nth-child(2) {
+            vertical-align: middle;
         }
         button {
-            width: 100px; /* 버튼 크기 고정 */
+            width: 120px; /* 버튼 크기 고정 */
             margin: 5px;
             padding: 8px 12px;
             background-color: #f0f0f0;
@@ -99,21 +107,28 @@
             clip: rect(0, 0, 0, 0);
             border: 0;
         }
+        .required-text {
+            text-decoration: underline;
+            text-decoration-color: red;
+        }
+        .required-asterisk {
+            color: red;
+        }
     </style>
 </head>
 <body>
     <table>
         <colgroup>
             <col>
-            <col>
+            <col class="col-second">
             <col>
         </colgroup>
         <tr>
             <td rowspan="7">
                 <div><img src="./img/기호_원.png"></div>
-                <h2>기본정보</h2><p>필수항목*</p>
+                <h2>기본정보</h2><p><span class="required-text">필수항목</span><span class="required-asterisk">*</span></p>
             </td>
-            <td><span>인증선택*</span></td>
+            <td><span>인증선택</span><span class="required-asterisk">*</span></td>
             <td>
                 <div>
                     <button>휴대폰 본인인증</button><button>아이핀 인증</button>
@@ -128,18 +143,18 @@
                     <label for="phone3" class="sr-only">전화번호 세 번째</label>
                     <input type="number" id="phone3" placeholder="5678" maxlength="4">
                 </div>
-                <p class="error-message">※ 인증이 안되신다면?<img src="./icon-help.png" style="width: 16px; vertical-align: middle;"></p>
+                <p class="error-message">※ 인증이 안되신다면?<img src="./img/icon-help.png" style="width: 16px; vertical-align: middle;"></p>
             </td>
         </tr>
         <tr>    
-            <td>이름*</td>
+            <td>이름<span class="required-asterisk">*</span></td>
             <td class="single-input">
                 <label for="name" class="sr-only">이름</label>
                 <input type="text" id="name" placeholder="이름을 입력해 주세요." maxlength="5">
             </td>
         </tr>
         <tr>
-            <td>회원아이디*</td>
+            <td>회원아이디<span class="required-asterisk">*</span></td>
             <td class="with-button">
                 <div style="display: flex; align-items: center; gap: 5px;">
                     <label for="userid" class="sr-only">회원아이디</label>
@@ -150,7 +165,7 @@
             </td>
         </tr>
         <tr>
-            <td>비밀번호*</td>
+            <td>비밀번호<span class="required-asterisk">*</span></td>
             <td class="single-input">
                 <label for="password" class="sr-only">비밀번호</label>
                 <input type="password" id="password" placeholder="비밀번호 입력" maxlength="5">
@@ -158,21 +173,21 @@
             </td>
         </tr>
         <tr>
-            <td>비밀번호 확인*</td>
+            <td>비밀번호 확인<span class="required-asterisk">*</span></td>
             <td class="single-input">
                 <label for="password-confirm" class="sr-only">비밀번호 확인</label>
                 <input type="password" id="password-confirm" placeholder="비밀번호 확인" maxlength="7">
             </td>
         </tr>
         <tr>
-            <td>생년월일*</td>
+            <td>생년월일<span class="required-asterisk">*</span></td>
             <td class="single-input">
                 <label for="birthdate" class="sr-only">생년월일</label>
                 <input type="datetime-local" id="birthdate">
             </td>
         </tr>
         <tr>
-            <td>e-mail*</td>
+            <td>e-mail<span class="required-asterisk">*</span></td>
             <td>
                 <div class="email-input">
                     <label for="email-id" class="sr-only">이메일 아이디</label>
@@ -359,7 +374,11 @@
             </td>
         </tr>
         <tr>
-            <td colspan="3"><button>취소</button><button>완료</button></td>
+            <td colspan="3">
+                <div class="button-container">
+                    <button>취소</button>
+                    <button>완료</button></td>
+                </div>
         </tr>
     </table>
 </body>
