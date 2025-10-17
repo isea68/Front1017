@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="kor">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        max-width: 1920px;
+        height: 1080px;
+        overflow-x: hidden;
+        margin: 0%;
+    }
+</style>
+<body>
+    <style>
+        header{
+            width: 1920px;
+            height: 40px;
+        }
+        header > div{
+            width: 100%;
+            height: 40px;
+            text-align: center;
+            background-color: rgb(192, 198, 204);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: -30px;
+            padding: 1px;
+        }
+        header > div > ul{
+            list-style: none;
+            height: fit-content;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            gap: 10px;
+            font-size: 14px;
+        }
+        header > div > ul > li{
+            width: 130px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        header > div > ul > li:hover{
+            cursor: pointer;
+            border-bottom: 5px solid red;
+        }
+        header > div > ul > li > span{
+            font-size: large;
+        }
+        .debug{
+            border: 1px solid;
+        }
+    </style>
+    <header>
+        <div>
+            <ul>
+                <li><a href="http://127.0.0.1:5500/Nong_login_lee.html"><span>율촌화학</span></a></li>
+                <li><a href="http://127.0.0.1:5500/JY_login.html"><span>농심캐피탈</span></a></li>
+                <li><a href="http://127.0.0.1:5500/nLogin.html"><span>호텔농심</span></a></li>
+            </ul>
+        </div>
+    </header>
+    <style>
+        nav{
+            position: absolute;
+            top: 10;
+            width: 100%;
+            height: 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+            z-index: 2;
+            background-color: rgba(0, 0, 0, 0);
+        }
+        nav > div{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        nav > div:first-child{
+            display: flex;
+            align-items: center;
+        }
+        nav > div > ul{
+            list-style: none;
+            height: fit-content;
+            margin: 0%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            gap: 20px;
+            font-size: 14px;
+        }
+        .imgsize{
+            width: 150px;
+            height: 57px;
+            margin-left: 60px;
+        }
+        .imgsize:hover{
+            cursor: pointer;
+        }
+        .iconsize{
+            width: 100%;
+            height: 40px;
+            margin: 0%;
+        }
+        .iconsize:hover{
+            cursor: pointer;
+        }
+        .iconsize2{
+            width: 30px;
+            height: 26px;
+            margin-right: 20px;
+        }
+         .iconsize2:hover{
+            cursor: pointer;
+        }
+        nav div ul li span{
+            color: white;
+            font-size: 22px;
+        }
+        nav div ul li span:hover{
+            cursor: pointer;
+        }
+    </style>
+    <nav>
+        <div>
+            <img class="imgsize" src="./imgs/logoimg.png" alt="메인페이지로 가기">
+        </div>
+        <div>
+            <ul>
+                <li><a href="http://127.0.0.1:5500/Nong_intro.html"><span>농심소개</span></a></li>
+                <li><a href="http://127.0.0.1:5500/nInv.html"><span>투자정보</span></a></li>
+                <li><a href="http://127.0.0.1:5500/JY_noticeboard.html"><span>게시판</span></a></li>
+                <li><span>오픈이노베이션</span></li>
+                <li><span>고객서비스</span></li>
+                <li><img class="iconsize" src="./imgs/nlive_img.png" alt="nlive"></li>
+                <li><img class="iconsize" src="./imgs/mall_img.png" alt="mall"></li>
+            </ul>
+        </div>
+        <div>
+            <ul>
+                <li><img class="iconsize2" src="./imgs/search.png" alt=""></li>
+                <li><img class="iconsize2" src="./imgs/chat.png" alt=""></li>
+                <li><img class="iconsize2" src="./imgs/person.png" alt=""></li>
+                <li><img class="iconsize2" src="./imgs/list.png" alt=""></li>
+            </ul>
+        </div>
+    </nav>
+    <style>
+        .slides{
+            display: flex;
+            width: 1920px;
+            height: 1024px;
+            overflow: hidden;
+            position: relative;
+        }
+        .slides img{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            animation: slide 15s infinite;
+        }
+
+        .slides img:nth-child(1) { animation-delay: 0s;}
+        .slides img:nth-child(2) { animation-delay: 3s;}
+        .slides img:nth-child(3) { animation-delay: 6s;}
+        .slides img:nth-child(4) { animation-delay: 9s;}
+        .slides img:nth-child(5) { animation-delay: 12s;}
+        .slides img:nth-child(6) { animation-delay: 15s;}
+
+        .slider:hover .slides{
+            animation-play-state: paused;
+        }
+
+        @keyframes slide {
+            0% { opacity: 0; }
+            8% { opacity: 1; }
+            25% { opacity: 1; }
+            33% { opacity: 0; }
+            100% { opacity: 0; }
+        }
+        
+    </style>
+    <div class="slider">
+        <div class="slides">
+            <img src="https://image.nongshim.com/non/main/web_demon2.jpg" alt="">
+            <img src="https://image.nongshim.com/non/main/web_demon2.jpg" alt="">
+            <img src="https://image.nongshim.com/non/main/web_demon3.jpg" alt="">
+            <img src="https://image.nongshim.com/non/main/1742953997680.jpg" alt="">
+            <img src="https://image.nongshim.com/non/main/1742953954428.jpg" alt="">
+            <img src="https://image.nongshim.com/non/main/1621294637450.jpg" alt="">
+        </div>
+    </div>
+</body>
+</html>

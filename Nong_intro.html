@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="kor">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction</title>
+</head>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+<style>
+    body {
+        width: 1024px;
+        margin: 0px auto;
+        padding: 0;
+    }
+    #header {
+        width: 100%;
+        height: 60px;
+        background-color: white;
+        font-weight: bold;
+        display: flex;  /* flexbox 레이아웃 모드 */
+        align-items: center; /* 세로축 중앙 정렬 */
+        justify-content: center; /* 전체 컨텐츠 가운데 정렬 (ul이 내부에서 배치됨) */
+    }
+    /* Header 내의 UL을 flex 컨테이너로 만들어 로고와 메뉴를 가로로 정렬하고 동일 간격 적용 */
+    #header > ul{
+        display: flex;
+        align-items: center; /* 세로 중앙 정렬 */
+        justify-content: space-around; /* 아이템들 사이 동일 간격 */
+        width: 80%; /* 필요시 너비 조정 */
+        margin: 0; /* ul 기본 여백 제거 */
+        padding: 0;
+        list-style: none;
+    }
+    #header > ul > li{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex: 0 0 auto; /* 크기 고정, 균등 간격은 space-around가 처리 */
+        margin: 0 8px;
+        padding: 6px 8px;
+        border-radius: 6px;
+        cursor: pointer; /* show pointer for header items */
+        transition: background-color 0.15s ease; /* smooth hover */
+    }
+    #header ul li:hover {
+        color: black;
+        background-color: lightgray;
+        cursor: pointer; /* 마우스 올리면 손가락 모양으로 */
+    }
+    /* 로고 크기 제한 */
+    #header > ul > li:first-child img{
+        height: 44px;
+        width: auto;
+        display: block;
+    }
+    #nav {
+        width: 100%;
+        height: 50px;
+        background-color: lightblue;
+        margin-top: 0px;
+        display: flex;
+        align-items: center;
+    }
+    #nav > ul {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap; /* 한 줄에 유지 */
+        align-items: center;
+        margin: 0;
+        padding: 0 12px;
+        list-style: none;
+        width: 100%;
+    }
+    #nav > ul > li {
+        margin-right: 16px;
+        color: #fff; /* 흰색 텍스트 */
+        text-align: left; /* 왼쪽 정렬 */
+        white-space: nowrap; /* 줄바꿈 방지 */
+    }
+    #nav ul li:hover {
+        color: black;
+        background-color: white;
+        cursor: pointer; /* 마우스 올리면 손가락 모양으로 */
+    }
+    #title_image {
+        width: 100%;
+        height: 300px;
+        background-color: lightgreen;
+        text-align: center;
+        line-height: 300px;
+        font-size: 25px;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+    }
+    #title_image img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* fill the container without gaps */
+        margin: 0;
+        padding: 0;
+        display: block;
+        border: 0;
+    }
+
+    .image_group {
+        display: flex;
+        gap: 0;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .image_bar {
+        flex: 1 1 0;
+        width: 33.3333%;
+        box-sizing: border-box;
+        text-align: center;
+        line-height: 200px;
+        font-size: 20px;
+        font-weight: bold;
+        color: white;
+        height: 200px;
+        background-color: chocolate;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+    }
+
+    .image_bar img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        border: 0;
+    }
+    /* base font-size for scaling footer/text */
+    :root { --nav-font-size: 16px; }
+    /* apply nav font size so footer scaling can reference it */
+    #nav { font-size: var(--nav-font-size); }
+
+    #footer {
+        clear: both;
+        width: 100%;
+        background-color: lightgray;
+        text-align: left;
+        padding: 12px;
+        box-sizing: border-box;
+        font-weight: bold;
+    }
+    /* Make all footer text gray */
+    #footer { color: #666; }
+    /* Footer ULs: display like nav (single line), black text, 80% of nav font-size */
+    #footer > ul {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        align-items: center;
+        gap: 16px;
+        margin: 0 0 6px 0;
+        padding: 0;
+        list-style: none;
+        color: #000;
+        font-size: calc(var(--nav-font-size) * 0.8);
+    }
+    #footer > ul > li { margin: 0; padding: 0; }
+    /* Final footer paragraphs at 60% of nav font-size */
+    #footer > p { font-size: calc(var(--nav-font-size) * 0.6); margin: 6px 0 0 0; }
+</style>
+<body>
+    <div id="header">
+        <ul>
+            <li><img src="./img/농심로고.PNG"></li>
+            <li>농심소개</li>
+            <li>투자정보</li>
+            <li>고객서비스</li>
+            <li>로그인</li>
+        </ul>
+    </div>
+    <div id="nav">
+        <ul>
+            <li><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left-square" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M15 2a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1zM0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm11.5 5.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5z"/>
+</svg></li>
+            <li>농심 홈피로</li>
+            <li>농심소개</li>
+            <li>OVERVIEW</li>
+        </ul>
+    </div>
+    <div id="title_image">
+        <img src="./img/경영이념.PNG">
+    </div>
+    <div class="image_group">
+        <div class="image_bar">
+            <img src="./img/overview.PNG" alt="overview">
+        </div>
+        <div class="image_bar">
+            <img src="./img/identity.png" alt="identity">
+        </div>
+        <div class="image_bar">
+            <img src="./img/연혁.png" alt="history">
+        </div>
+    </div>
+    <div style="clear: both;"></div>
+    <div id="footer">
+        <ul>
+            <li>상담접수</li>
+            <li>FAQ</li>
+            <li>오시는길</li>
+            <li>이용약관</li>
+            <li>개인정보처리방침</li>
+        </ul>
+        <ul>
+            <li>특약점포탈</li>
+            <li>상생결제</li>
+            <li>증명서조회</li>
+            <li>이메일주소무단수집거부</li>
+        </ul>
+        <p>(주)농심서울특별시 동작구 여의대방로 112 (신대방동)사업자등록번호118-81-03914대표이사이병학</p>
+        <p>대표전화02.820.7114고객센터080.023.5181</p>
+    </div>
+</body>
+</html>

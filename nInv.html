@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
+
+<style>
+    a {
+    text-decoration: none; /* 기본 밑줄 제거 */
+    color: inherit;  /* 상속 색상 사용 */
+    }
+
+    #nav1 {
+        background-color: rgb(240, 241, 245);
+        height: 50px;
+    }
+
+    #nav1 ul li {
+        display: inline-block;
+        width: 100px;
+        text-align: center;
+        /* 글자 가운데 정렬 */
+        margin-right: 2px;
+        /* 간격 조정 */
+        list-style: none;
+    }
+
+    #nav1 a {
+        background-color: transparent;
+        color: black;
+        text-decoration: none;
+        padding: 6px 10px;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        height: 20px;
+        min-width: 50px;
+        font-size: 14px;
+    }
+
+    #nav1 a:hover {
+        color: black;
+        text-decoration: underline;
+        cursor: pointer;
+    }
+
+        #nav1 ul li {
+        display: inline-block;
+        width: 100px;
+        text-align: center;
+        /* 글자 가운데 정렬 */
+        margin-right: 2px;
+        /* 간격 조정 */
+        list-style: none;
+    }
+
+    #nav2 a {
+        background-color: transparent;
+        color: black;
+        text-decoration: none;
+        padding: 6px 10px;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        height: 20px;
+        min-width: 50px;
+        font-size: 14px;
+    }
+
+    #nav2 a:hover {
+        color: black;
+        text-decoration: underline;
+        cursor: pointer;
+    }
+
+    #nav1_btn {
+        display: flex;
+        justify-content: center;
+        gap: 50px;
+        margin: 20px auto;
+        width: fit-content;
+    }
+
+    #nav2_btn {
+        display: flex;
+        justify-content: center;
+        gap: 50px;
+        margin: 20px auto;
+        width: fit-content;
+    }
+
+    #nav3_btn {
+        display: flex;
+        justify-content: center;
+        gap: 50px;
+        margin: 20px auto;
+        width: fit-content;
+    }
+
+    #title_image {
+        display: flex;
+        justify-content: center;
+        gap: 50px;
+        margin: 20px auto;
+        width: fit-content;
+    }
+
+    #image_group1 {
+        display: flex;
+        justify-content: center;
+        gap: 50px;
+        margin: 20px auto;
+        margin-top: 70px;
+        width: fit-content;
+    }
+
+    #image_group2 {
+        display: flex;
+        justify-content: center;
+        gap: 50px;
+        margin: 20px auto;
+        margin-top: 150px;
+        width: fit-content;
+    }
+
+    #footer {
+        display: flex;
+        justify-content: center;
+        gap: 50px;
+        margin: 20px auto;
+        width: fit-content;
+    }
+
+    .text {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: auto;
+    }
+
+    button {
+        width: 40px;
+        height: 40px;
+        border-width: 1px;
+        border-radius: 5px;
+    }
+</style>
+
+<body>
+    <div id="nav1">
+        <ul id=nav1_btn>
+            <li><a href="">농심</a></li>
+            <li><a href="">브랜드</a></li>
+            <li><a href="">누들푸들</a></li>
+            <li><a href="">농심채용</a></li>
+        </ul>
+    </div>
+
+    <div id="nav2">
+        <ul id=nav2_btn>
+            <li><a href=""><img src="./image/농심로고.PNG" alt="농심로고"></a></li> <!--메인화면으로-->
+            <li><a href="">농심소개</a></li>
+            <li><a href="">지속가능경영</a></li>
+            <li><a href="">홍보센터</a></li>
+            <li><a href="">투자정보</a></li>
+            <li><a href="">오픈이노베이션</a></li>
+            <li><a href="">고객서비스</a></li>
+            <li><a href="">N>LIVE</a></li>
+            <li><a href="">농심mall</a></li>
+            <li><a href="">검색</a></li>
+            <li><a href="">로그인</a></li> <!--로그인/회원가입 화면으로-->
+            <li><a href="">언어</a></li>
+            <li><a href="">사이트맵</a></li>
+        </ul>
+
+        <div id="nav3">
+            <ul id=nav3_btn>
+                <li><a href="">농심</a></li>
+                투자정보 / OVERVIEW
+                <li><a href="">농심소개</a></li>
+                <li><a href="">지속가능경영</a></li>
+            </ul>
+
+        </div>
+
+        <div id="title_image">
+            <img src="./image/타이틀이미지.PNG" width="100%" height="450" alt="타이틀이미지">
+        </div>
+
+        <button type="button" class="text"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40"
+                fill="currentColor" class="bi bi-arrow-down" viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                    d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1" />
+            </svg></i></button>
+
+        <div id="image_group1">
+            <table>
+                <tr>
+                    <td>
+                        <div>주식에 관한 사항<a href="">더보기 >
+                                <hr>
+                            </a><img src="./image/주식에관한사항.PNG" alt="주식에관한사항"></div>
+                    </td>
+                    <td>
+                        <div>주가정보<a href="">더보기 >
+                                <hr>
+                            </a><img src="./image/주가정보.PNG" alt="주가정보"></div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div>IR정보<a href="">더보기 >
+                                <hr>
+                            </a><img src="./image/IR정보.PNG" alt="IR정보"></div>
+                    </td>
+                    <td>
+                        <div>공시정보<a href="">더보기 >
+                                <hr>
+                            </a><img src="./image/공시정보.PNG" alt="공시정보"></div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class=text>
+            IR 문의 : sjchun@nongshim.com l 02-820-7164
+        </div>
+
+        <div id="image_group2">
+            <div>OVERVIEW</div>
+            <div>주식에 관한 사항</div>
+            <div>주가정보</div>
+            <div>IR정보</div>
+            <div>공시정보</div>
+        </div>
+
+        <hr>
+
+        <footer>
+            <table>
+                <tr>
+                    <td>
+                        <div>
+                            <a href="">상담접수</a>
+                            <a href="">FAQ</a>
+                            <a href="">오시는길</a>
+                            <a href="">이용약관</a>
+                            <a href="">개인정보처리방침</a>
+                        </div>
+
+                        <div>
+                            <a href="">특약점포탈</a>
+                            <a href="">상생결제</a>
+                            <a href="">증명서조회</a>
+                            <a href="">이메일주소무단수집거부</a>
+                        </div>
+
+                        <div>
+                            (주)농심 | 서울특별시 동작구 여의대방로112(신대방동) | 사업자등록번호 118-81-03914 | 대표이사 이병학 <br>
+                            대표전화 02.820.7114 | 고객센터 080.023.5181 <br>
+                            <p>© NONGSHIM CO.,LTD. ALL RIGHTS RESERVED</p>
+                        </div>
+                    </td>
+
+                    <td>
+                        <div>패밀리사이트</div>
+                        <div>
+                            <a href=""><img src="./image/페이스북.png" width="40" height="40" alt="페이스북"></a>
+                            <a href=""><img src="./image/인스타그램.png" width="40" height="40" alt="인스타그램"></a>
+                            <a href=""><img src="./image/유튜브.png" width="40" height="40" alt="유튜브"></a>
+                            <a href=""><img src="./image/네이버블로그.png" width="40" height="40" alt="네이버블로그"></a>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </footer>
+</body>
